@@ -1,0 +1,425 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    main {
+        .blue {
+            background: dodgerblue;
+        }
+
+        .green {
+            background: #68D9A4;
+        }
+
+        .red {
+            background: #ED6454;
+        }
+
+        .logoContainer {
+            width: 90%;
+            margin: auto;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 50px;
+
+            img {
+                width: 25%;
+            }
+        }
+
+        .searchContainer {
+            width: 90%;
+            margin: auto;
+            padding-top: 30px;
+
+            .search {
+                width: 100%;
+                display: flex;
+                background: #E7E7E7;
+                border-radius: 10px;
+                overflow: hidden;
+                font-size: 1.1rem;
+
+                input {
+                    width: 100%;
+                    max-width: 100%;
+                    padding: 20px 0 20px 15px;
+                    background: transparent;
+                    border: none;
+                    outline: none;
+                }
+
+                button {
+                    background: transparent;
+                    border: none;
+                    padding-right: 15px;
+                    font-size: 1.5rem;
+
+                    &:hover {
+                        cursor: pointer;
+                    }
+                }
+            }
+
+            #tagsContainer {
+                padding-top: 20px;
+                width: 100%;
+                display: flex;
+                justify-content: flex-start;
+                align-items: center;
+                gap: 15px;
+
+                .tag {
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                    color: white;
+                    font-family: 'Lato';
+                    padding: 10px 15px;
+                    gap: 10px;
+                    border-radius: 10px;
+
+                    p {
+                        width: fit-content;
+                        font-size: 18px;
+                    }
+
+                    button {
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        width: fit-content;
+                        border: none;
+                        background: transparent;
+                        color: white;
+                        font-size: 22px;
+                        cursor: pointer;
+                    }
+                }
+
+                .ingredient {
+                    background: dodgerblue;
+                }
+
+                .appliance {
+                    background: #68D9A4;
+                }
+
+                .ustensil {
+                    background: #ED6454;
+                }
+            }
+
+            .params {
+                margin-top: 15px;
+                display: flex;
+                justify-content: flex-start;
+                gap: 45px;
+
+                .dropdown {
+                    position: relative;
+                    width: 450px;
+                    border-radius: 5px;
+
+                    /* Ajustez la largeur du dropdown selon vos besoins */
+                    #searchSuggestionIngredient {
+                        display: none;
+                    }
+
+                    #searchSuggestionAppliance {
+                        display: none;
+                    }
+
+                    #searchSuggestionUstensil {
+                        display: none;
+                    }
+                }
+
+                .dropdown-header {
+                    display: flex;
+                    align-items: center;
+                    cursor: pointer;
+                    padding: 10px;
+                    border-radius: 15px;
+                    overflow: hidden;
+                }
+
+                .opened {
+                    border-radius: 15px 15px 0 0;
+                }
+
+                .dropdown-arrow {
+                    width: fit-content;
+                    aspect-ratio: 1/1;
+                    font-size: 20px;
+                    color: white;
+                    padding: 5px;
+                }
+
+                .dropdown-input {
+                    flex: 1;
+                    border: none;
+                    outline: none;
+                    color: white;
+                    padding: 5px 10px;
+                    font-family: "Lato";
+                    font-weight: 500;
+                    letter-spacing: 1px;
+                    font-size: 16px;
+
+                    &::placeholder {
+                        color: white;
+                    }
+                }
+
+                .dropdown-list {
+                    position: absolute;
+                    top: 100%;
+                    left: 0;
+                    width: 100%;
+                    max-height: 200px;
+                    /* Ajustez la hauteur maximale de la liste selon vos besoins */
+                    overflow-y: auto;
+                    display: block;
+                    column-count: 2;
+                    list-style: none;
+                    padding-top: 10px;
+
+                    li {
+                        display: flex;
+                        justify-content: flex-start;
+                        width: 100%;
+                        margin-left: 10px;
+                        color: white;
+
+                        button {
+                            width: 100%;
+                            color: white;
+                            background: transparent;
+                            border: none;
+                            font-size: 18px;
+                            padding: 2px 0;
+
+                            &:hover {
+                                cursor: pointer;
+                                background: rgb(26, 119, 212);
+                            }
+                        }
+                    }
+                }
+
+                .dropdown-list-item {
+                    padding: 10px;
+                    cursor: pointer;
+                    transition: background-color 0.3s ease-in-out;
+
+                    &:hover {
+                        background-color: #f2f2f2;
+                    }
+                }
+
+                .dropdown.open .dropdown-arrow {
+                    transform: rotate(225deg);
+                }
+
+                .dropdown.open .dropdown-list {
+                    display: block;
+                }
+
+                .tagger {
+                    width: fit-content;
+                    background: dodgerblue;
+                    border: none;
+                    border-radius: 5px;
+                    outline: none;
+                    position: relative;
+                    display: flex;
+                    flex-direction: column;
+                    border-radius: 15px;
+
+                    .entry {
+                        width: 100%;
+                        display: flex;
+                        justify-content: space-between;
+                        border-radius: 5px 5px 0 0;
+
+                        input {
+                            width: 100%;
+                            padding-right: 40px;
+                            background: transparent;
+                            border: none;
+                            color: white;
+                            padding: 20px 10px;
+                            outline: none;
+                            font-family: "Lato";
+                            font-weight: 500;
+                            letter-spacing: 1px;
+                            font-size: 16px;
+                            border-radius: 5px;
+
+                            &::placeholder {
+                                color: white;
+                            }
+                        }
+
+                        button {
+                            background: transparent;
+                            border: none;
+                            margin-right: 15px;
+                            cursor: pointer;
+
+                            i {
+                                color: white;
+                                font-size: 12px;
+                            }
+                        }
+                    }
+
+                    .preview {
+                        display: block;
+                        width: auto;
+                        position: absolute;
+                        top: 57px;
+                        left: 0;
+                        background: dodgerblue;
+                        border-radius: 0 0 5px 5px;
+
+                        ul {
+                            list-style: none;
+                            width: auto;
+                            max-height: 100%;
+                            column-count: 4;
+
+                            li {
+                                width: fit-content;
+                                color: white;
+                                font-family: 'Roboto';
+
+                                button {
+                                    width: auto;
+                                    color: white;
+                                    background: transparent;
+                                    border: none;
+                                    font-size: 17px;
+                                    padding: 2px 5px;
+
+                                    &:hover {
+                                        cursor: pointer;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        .cardsContainer {
+            width: 90%;
+            margin: auto;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            padding: 50px 0;
+            gap: 50px;
+
+            #noFound {
+                display: block;
+            }
+
+            .card {
+                width: 30%;
+                display: flex;
+                flex-direction: column;
+                align-items: flex-start;
+                border-radius: 5px;
+                overflow: hidden;
+
+                .thumb {
+                    width: 100%;
+                    height: 250px;
+                    background: #C7BEBE;
+                }
+
+                .cardContent {
+                    width: 100%;
+                    background: #E7E7E7;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    align-items: center;
+
+                    .cardTitle {
+                        width: 90%;
+                        display: flex;
+                        justify-content: space-between;
+                        align-items: center;
+                        margin: 15px 0;
+
+                        h2 {
+                            width: 80%;
+                            font-size: 20px;
+                            font-family: "Lato";
+                            font-style: normal;
+                            font-weight: bold;
+                            font-size: 23px;
+                            line-height: 22px;
+                            white-space: nowrap;
+                            overflow: hidden;
+                            text-overflow: ellipsis;
+                        }
+
+                        .timer {
+                            display: flex;
+                            width: fit-content;
+                            align-items: center;
+                            gap: 5px;
+                            font-weight: bold;
+                            font-size: 18px;
+                            font-family: "Lato";
+                        }
+                    }
+
+                    .cardDescription {
+                        width: 90%;
+                        height: 130px;
+                        display: flex;
+                        align-items: flex-start;
+                        justify-content: space-between;
+                        padding: 0 10px 40px 10px;
+
+                        ul {
+                            width: 49%;
+                            height: 100%;
+                            list-style: none;
+                            margin: 0;
+
+                            li {
+                                font-size: 16px;
+                                font-family: "Lato";
+                            }
+                        }
+
+                        p {
+                            display: block;
+                            width: 49%;
+                            max-height: 130px;
+                            display: -webkit-box;
+                            -webkit-line-clamp: 6;
+                            -webkit-box-orient: vertical;
+                            overflow: hidden;
+                            font-family: "Roboto";
+                            font-style: normal;
+                            font-weight: 400;
+                            font-size: 16px;
+                            line-height: 100%;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

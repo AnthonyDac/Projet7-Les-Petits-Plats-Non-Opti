@@ -1,0 +1,366 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+
+body main .blue {
+  background: dodgerblue;
+}
+body main .green {
+  background: #68D9A4;
+}
+body main .red {
+  background: #ED6454;
+}
+body main .logoContainer {
+  width: 90%;
+  margin: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 50px;
+}
+body main .logoContainer img {
+  width: 25%;
+}
+body main .searchContainer {
+  width: 90%;
+  margin: auto;
+  padding-top: 30px;
+}
+body main .searchContainer .search {
+  width: 100%;
+  display: flex;
+  background: #E7E7E7;
+  border-radius: 10px;
+  overflow: hidden;
+  font-size: 1.1rem;
+}
+body main .searchContainer .search input {
+  width: 100%;
+  max-width: 100%;
+  padding: 20px 0 20px 15px;
+  background: transparent;
+  border: none;
+  outline: none;
+}
+body main .searchContainer .search button {
+  background: transparent;
+  border: none;
+  padding-right: 15px;
+  font-size: 1.5rem;
+}
+body main .searchContainer .search button:hover {
+  cursor: pointer;
+}
+body main .searchContainer #tagsContainer {
+  padding-top: 20px;
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 15px;
+}
+body main .searchContainer #tagsContainer .tag {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: white;
+  font-family: "Lato";
+  padding: 10px 15px;
+  gap: 10px;
+  border-radius: 10px;
+}
+body main .searchContainer #tagsContainer .tag p {
+  width: fit-content;
+  font-size: 18px;
+}
+body main .searchContainer #tagsContainer .tag button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: fit-content;
+  border: none;
+  background: transparent;
+  color: white;
+  font-size: 22px;
+  cursor: pointer;
+}
+body main .searchContainer #tagsContainer .ingredient {
+  background: dodgerblue;
+}
+body main .searchContainer #tagsContainer .appliance {
+  background: #68D9A4;
+}
+body main .searchContainer #tagsContainer .ustensil {
+  background: #ED6454;
+}
+body main .searchContainer .params {
+  margin-top: 15px;
+  display: flex;
+  justify-content: flex-start;
+  gap: 45px;
+}
+body main .searchContainer .params .dropdown {
+  position: relative;
+  width: 450px;
+  border-radius: 5px;
+  /* Ajustez la largeur du dropdown selon vos besoins */
+}
+body main .searchContainer .params .dropdown #searchSuggestionIngredient {
+  display: none;
+}
+body main .searchContainer .params .dropdown #searchSuggestionAppliance {
+  display: none;
+}
+body main .searchContainer .params .dropdown #searchSuggestionUstensil {
+  display: none;
+}
+body main .searchContainer .params .dropdown-header {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  padding: 10px;
+  border-radius: 15px;
+  overflow: hidden;
+}
+body main .searchContainer .params .opened {
+  border-radius: 15px 15px 0 0;
+}
+body main .searchContainer .params .dropdown-arrow {
+  width: fit-content;
+  aspect-ratio: 1/1;
+  font-size: 20px;
+  color: white;
+  padding: 5px;
+}
+body main .searchContainer .params .dropdown-input {
+  flex: 1;
+  border: none;
+  outline: none;
+  color: white;
+  padding: 5px 10px;
+  font-family: "Lato";
+  font-weight: 500;
+  letter-spacing: 1px;
+  font-size: 16px;
+}
+body main .searchContainer .params .dropdown-input::placeholder {
+  color: white;
+}
+body main .searchContainer .params .dropdown-list {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  max-height: 200px;
+  /* Ajustez la hauteur maximale de la liste selon vos besoins */
+  overflow-y: auto;
+  display: block;
+  column-count: 2;
+  list-style: none;
+  padding-top: 10px;
+}
+body main .searchContainer .params .dropdown-list li {
+  display: flex;
+  justify-content: flex-start;
+  width: 100%;
+  margin-left: 10px;
+  color: white;
+}
+body main .searchContainer .params .dropdown-list li button {
+  width: 100%;
+  color: white;
+  background: transparent;
+  border: none;
+  font-size: 18px;
+  padding: 2px 0;
+}
+body main .searchContainer .params .dropdown-list li button:hover {
+  cursor: pointer;
+  background: rgb(26, 119, 212);
+}
+body main .searchContainer .params .dropdown-list-item {
+  padding: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out;
+}
+body main .searchContainer .params .dropdown-list-item:hover {
+  background-color: #f2f2f2;
+}
+body main .searchContainer .params .dropdown.open .dropdown-arrow {
+  transform: rotate(225deg);
+}
+body main .searchContainer .params .dropdown.open .dropdown-list {
+  display: block;
+}
+body main .searchContainer .params .tagger {
+  width: fit-content;
+  background: dodgerblue;
+  border: none;
+  border-radius: 5px;
+  outline: none;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  border-radius: 15px;
+}
+body main .searchContainer .params .tagger .entry {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  border-radius: 5px 5px 0 0;
+}
+body main .searchContainer .params .tagger .entry input {
+  width: 100%;
+  padding-right: 40px;
+  background: transparent;
+  border: none;
+  color: white;
+  padding: 20px 10px;
+  outline: none;
+  font-family: "Lato";
+  font-weight: 500;
+  letter-spacing: 1px;
+  font-size: 16px;
+  border-radius: 5px;
+}
+body main .searchContainer .params .tagger .entry input::placeholder {
+  color: white;
+}
+body main .searchContainer .params .tagger .entry button {
+  background: transparent;
+  border: none;
+  margin-right: 15px;
+  cursor: pointer;
+}
+body main .searchContainer .params .tagger .entry button i {
+  color: white;
+  font-size: 12px;
+}
+body main .searchContainer .params .tagger .preview {
+  display: block;
+  width: auto;
+  position: absolute;
+  top: 57px;
+  left: 0;
+  background: dodgerblue;
+  border-radius: 0 0 5px 5px;
+}
+body main .searchContainer .params .tagger .preview ul {
+  list-style: none;
+  width: auto;
+  max-height: 100%;
+  column-count: 4;
+}
+body main .searchContainer .params .tagger .preview ul li {
+  width: fit-content;
+  color: white;
+  font-family: "Roboto";
+}
+body main .searchContainer .params .tagger .preview ul li button {
+  width: auto;
+  color: white;
+  background: transparent;
+  border: none;
+  font-size: 17px;
+  padding: 2px 5px;
+}
+body main .searchContainer .params .tagger .preview ul li button:hover {
+  cursor: pointer;
+}
+body main .cardsContainer {
+  width: 90%;
+  margin: auto;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  padding: 50px 0;
+  gap: 50px;
+}
+body main .cardsContainer #noFound {
+  display: block;
+}
+body main .cardsContainer .card {
+  width: 30%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  border-radius: 5px;
+  overflow: hidden;
+}
+body main .cardsContainer .card .thumb {
+  width: 100%;
+  height: 250px;
+  background: #C7BEBE;
+}
+body main .cardsContainer .card .cardContent {
+  width: 100%;
+  background: #E7E7E7;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+body main .cardsContainer .card .cardContent .cardTitle {
+  width: 90%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 15px 0;
+}
+body main .cardsContainer .card .cardContent .cardTitle h2 {
+  width: 80%;
+  font-size: 20px;
+  font-family: "Lato";
+  font-style: normal;
+  font-weight: bold;
+  font-size: 23px;
+  line-height: 22px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+body main .cardsContainer .card .cardContent .cardTitle .timer {
+  display: flex;
+  width: fit-content;
+  align-items: center;
+  gap: 5px;
+  font-weight: bold;
+  font-size: 18px;
+  font-family: "Lato";
+}
+body main .cardsContainer .card .cardContent .cardDescription {
+  width: 90%;
+  height: 130px;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  padding: 0 10px 40px 10px;
+}
+body main .cardsContainer .card .cardContent .cardDescription ul {
+  width: 49%;
+  height: 100%;
+  list-style: none;
+  margin: 0;
+}
+body main .cardsContainer .card .cardContent .cardDescription ul li {
+  font-size: 16px;
+  font-family: "Lato";
+}
+body main .cardsContainer .card .cardContent .cardDescription p {
+  display: block;
+  width: 49%;
+  max-height: 130px;
+  display: -webkit-box;
+  -webkit-line-clamp: 6;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 100%;
+}
+
+/*# sourceMappingURL=style.css.map */

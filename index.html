@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Les petis plats - Homepage</title>
+    <link rel="stylesheet" href="./public/css/style.css">
+    <link href='https://fonts.googleapis.com/css?family=Lato' rel='stylesheet'>
+    <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet'>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="https://kit.fontawesome.com/df2263792c.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <header>
+
+    </header>
+    <main>
+        <div class="logoContainer">
+            <img src="public/img/logo.png">
+        </div>
+        <div class="searchContainer">
+            <div class="search">
+                <input type="text" id="searchBar" placeholder="Rechercher une recette">
+                <button><i class="fa-solid fa-magnifying-glass"></i></button>
+            </div>
+            <div id="tagsContainer">
+
+            </div>
+            <div class="params">
+                <div class="dropdown blue">
+                    <div class="dropdown-header blue" id="dropdown-ingredients">
+                        <input type="text" class="dropdown-input blue" id="searchBarIngredients"
+                            placeholder="Sélectionner ingrédient(s)">
+                        <span class="dropdown-arrow" id="dropdown-ingredient"><i
+                                class="fa-solid fa-chevron-down"></i></span>
+                    </div>
+                    <ul class="dropdown-list blue" id="searchSuggestionIngredient">
+                    </ul>
+                </div>
+                <div class="dropdown green">
+                    <div class="dropdown-header green" id="dropdown-appliances">
+                        <input type="text" class="dropdown-input green" id="searchBarAppliances"
+                            placeholder="Sélectionner appareil(s)">
+                        <span class="dropdown-arrow" id="dropdown-appliance"><i
+                                class="fa-solid fa-chevron-down"></i></span>
+                    </div>
+                    <ul class="dropdown-list green" id="searchSuggestionAppliance">
+                    </ul>
+                </div>
+                <div class="dropdown red">
+                    <div class="dropdown-header red" id="dropdown-ustensils">
+                        <input type="text" class="dropdown-input red" id="searchBarUstensils"
+                            placeholder="Sélectionner ustensile(s)">
+                        <span class="dropdown-arrow" id="dropdown-ustensil"><i
+                                class="fa-solid fa-chevron-down"></i></span>
+                    </div>
+                    <ul class="dropdown-list red" id="searchSuggestionUstensil">
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="cardsContainer" id="cardsContainer">
+            <div id="noFound">
+                <p>Aucun résultat trouvé</p>
+            </div>
+        </div>
+    </main>
+    <script type="module" src="./js/main.js"></script>
+</body>
+
+</html>
